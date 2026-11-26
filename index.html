@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENDAUZ - Sog'lom ovqatlanish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#"><span class="brand-leaf">e</span><span>ENDAUZ</span></a>
+      <nav>
+        <button class="nav-link active" data-scroll="calculator">Kaloriya</button>
+        <button class="nav-link" data-scroll="restaurants">Restoranlar</button>
+      </nav>
+      <button class="support-btn" id="supportBtn">
+        <span>?</span> Yordam
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">SOG'LOM TANALOVCHI PARTNER</span>
+          <h1>Ovqatingizni hisoblang,<br><em>natijani</em> ko'ring</h1>
+          <p>Kunlik kaloriya ehtiyojingizni aniqlang va ovqatingizning taxminiy kaloriyasini toping.</p>
+          <button class="primary" data-scroll="calculator">Hisoblashni boshlash</button>
+        </div>
+        <div class="hero-art">
+          <div class="plate">
+            <img id="heroImage" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85" alt="Sog'lom ovqat">
+          </div>
+          <div class="floating-card card-calories"><span>Kaloriya</span><strong>540 <small>kkal</small></strong></div>
+          <div class="floating-card card-score"><span>Fit ovqat</span><strong>Yaxshi tanlov</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="section-title">
+          <div><span class="eyebrow">KUNLIK KALORINGIZ</span><h2>Ma'lumotlaringizni kiriting</h2></div>
+        </div>
+        <div class="calculator-grid">
+          <form class="profile-card" id="profileForm">
+            <div class="form-row">
+              <label>Yoshingiz<input id="age" type="number" min="14" max="100" value="25" required></label>
+              <label>Jinsingiz
+                <select id="gender"><option value="female">Ayol</option><option value="male">Erkak</option></select>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>Bo'yingiz (sm)<input id="height" type="number" min="120" max="230" value="170" required></label>
+              <label>Hozirgi vazningiz (kg)<input id="weight" type="number" min="35" max="250" value="70" required></label>
+            </div>
+            <label>Qanday natija xohlaysiz
+              <select id="goal">
+                <option value="lose">Vazn yo'qotish</option>
+                <option value="maintain" selected>Vazni saqlash</option>
+                <option value="gain">Vazn to'plash</option>
+              </select>
+            </label>
+            <label>Harakat darajasi
+              <select id="activity">
+                <option value="1.2">Harakatsiz</option>
+                <option value="1.375">Kam harakat</option>
+                <option value="1.55" selected>O'rtacha harakat</option>
+                <option value="1.725">Ko'p harakat</option>
+                <option value="1.9">Juda faol</option>
+              </select>
+            </label>
+            <button class="primary full" type="submit">Kunlik kaloriyani hisoblash</button>
+          </form>
+
+          <div class="result-card" id="resultCard">
+            <span class="result-label">TAVSIYA ETILGAN KALORIYA</span>
+            <div class="calorie-ring">
+              <strong id="dailyCalories">0</strong>
+              <span>kkal/kun</span>
+            </div>
+            <div class="result-details">
+              <div><span>Kunlik oqsil</span><strong id="proteinValue">-- g</strong></div>
+              <div><span>Kunlik yog'</span><strong id="fatValue">-- g</strong></div>
+              <div><span>Kunlik uglevod</span><strong id="carbsValue">-- g</strong></div>
+            </div>
+            <p id="goalText">Ma'lumotlarni kiriting va natijani ko'ring.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section food-section">
+      <div class="container">
+        <div class="section-title">
+          <div><span class="eyebrow">OVQAT TARKIBI</span><h2>Ovqat rasmini yuklang</h2></div>
+        </div>
+        <div class="food-grid">
+          <label class="upload-zone" id="uploadZone">
+            <input type="file" id="foodImage" accept="image/*">
+            <img id="foodPreview" alt="">
+            <div class="upload-placeholder" id="uploadPlaceholder">
+              <span class="upload-icon">+</span>
+              <strong>Rasmni tanlang</strong>
+              <small>PNG, JPG yoki WEBP</small>
+            </div>
+          </label>
+          <div class="nutrition-card" id="nutritionCard">
+            <span class="result-label">TAXMINIY MA'LUMOT</span>
+            <h3 id="foodName">Ovqat tanlanmagan</h3>
+            <div class="nutrition-main">
+              <strong id="foodCalories">0</strong><span>kkal</span>
+            </div>
+            <div class="nutrition-bars">
+              <div><span>Oqsil</span><b id="foodProtein">0 g</b></div>
+              <div><span>Yog'</span><b id="foodFat">0 g</b></div>
+              <div><span>Uglevod</span><b id="foodCarbs">0 g</b></div>
+            </div>
+            <p>Natija sun'iy intellekt modeli emas, rasm nomi va tovar namunasi asosidagi taxmindir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="restaurants">
+      <div class="container">
+        <div class="restaurant-heading">
+          <div class="section-title">
+            <div><span class="eyebrow">YENGA BERGAN O'ZGARISH</span><h2>Restoranlar</h2></div>
+          </div>
+          <div class="restaurant-search">
+            <input id="restaurantSearch" type="search" placeholder="Restoran yoki ovqat qidirish">
+          </div>
+        </div>
+        <div class="restaurant-grid" id="restaurantGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="support-panel" id="supportPanel">
+    <div class="support-head">
+      <div><strong>ENDAUZ yordam</strong><span>Online</span></div>
+      <button id="closeSupport">×</button>
+    </div>
+    <div class="support-body">
+      <p>Salom! Sizga qanday yordam bera olamiz?</p>
+      <button data-support="Kaloriyani qanday hisoblash kerak?">Kaloriyani hisoblash</button>
+      <button data-support="Ovqat rasmini qanday yuklash mumkin?">Ovqat rasmini yuklash</button>
+      <button data-support="Mahsulotlar haqida">Qulay ovqat tanlash</button>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="container">
+      <a class="brand" href="#"><span class="brand-leaf">e</span><span>ENDAUZ</span></a>
+      <p>Sog'lom ovqatlanish uchun kundalik yordamchi.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
